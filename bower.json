@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.0.3",
+    "angular": "git://github.com/angular/bower-angular.git#1.2.0-rc.2",
+    "angular-animate": "git://github.com/angular/bower-angular-animate.git#1.2.0-rc.2",
+    "angular-resource": "git://github.com/angular/bower-angular-resource.git#1.2.0-rc.2",
+    "sass-bootstrap": "~3.0.0"
+  }
+}
