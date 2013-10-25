@@ -15,12 +15,10 @@
 # gem 'pg'
 #
 development:
+  database: sjdug-web_development
   adapter: postgresql
   encoding: unicode
-  database: sjdug-web_development
-  pool: 5
-  username: sjdug-web
-  password:
+  host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -44,12 +42,10 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
+  database: sjdug-web_test
   adapter: postgresql
   encoding: unicode
-  database: sjdug-web_test
-  pool: 5
-  username: sjdug-web
-  password:
+  host: localhost
 
 production:
   adapter: postgresql
