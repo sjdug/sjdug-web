@@ -3,10 +3,17 @@
     <h1>Join our Mailing List</h1>
     <p class="lead">Would you like to be notified by email when the Saint John Developer User Group will be
     holding their next meeting?</p>
-    <p>
-      <button class="btn btn-primary">Sign me up!</button>
-      <button class="btn btn-small btn-danger">No Thanks</button>
-    </p>
+
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <input type="email" class="form-control" id="subscribe-email" placeholder="Email" />
+      </div>
+      <button id="subscribe-button" type="submit" class="btn btn-primary">Sign me up!</button>
+    </form>
+    <div class="subscription-success alert alert-success">
+      <strong>Congratulations!</strong>
+      You will be notified of our upcoming events.
+    </div>
   </div>
 </div>
 

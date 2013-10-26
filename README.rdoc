@@ -1,28 +1,10 @@
-== README
+== Saint John Developer User Group
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+=== MailChimp API
+To use the MailChimp API in development you must set the following environment variables:
+* MAILCHIMP_API_KEY
+* MAILCHIMP_LIST_ID
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+They can be acquired by registering for a MailChimp account.  The list id comes from
+a created mailing list.  Set them manually or through dotenv by creating a .env file
+at the root of the project.
