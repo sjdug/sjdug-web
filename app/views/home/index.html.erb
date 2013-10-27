@@ -4,8 +4,8 @@
   <div class="container">
     <a id="next-event"></a>
     <p class="lead">Our Next Event</p>
-    <h1>Building Better Web Applications with Angular.js</h1>
-    <h4>October 30th, 2013</h4>
+    <h1><%= @current_event.title %></h1>
+    <h4><%= @current_event.start_date %></h4>
     <button class="btn btn-large btn-primary">TODO: Eventbrite Registration Button</button>
   </div>
 </div>
@@ -43,14 +43,17 @@
       <hr />
     </header>
     <div class="row">
-      <div class="col-md-4">
-        Following Event Brite Event
+      <div class="col-md-4 event">
+        <div><%= @next_event.title %></div>
+        <div><%= @next_event.start_date %></div>
       </div>
-      <div class="col-md-4">
-        Current Event Brite Event
+      <div class="col-md-4 event">
+        <div><%= @current_event.title %></div>
+        <div><%= @current_event.start_date %></div>
       </div>
-      <div class="col-md-4">
-        Previous Event Brite Event
+      <div class="col-md-4 event">
+        <div><%= @previous_event.title %></div>
+        <div><%= @previous_event.start_date %></div>
       </div>
     </div>
   </section>
