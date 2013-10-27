@@ -1,28 +1,7 @@
-== README
+=== Eventbrite API
+To use the Eventbrite API in development you must set the following environment variables:
+* EVENTBRITE_APP_KEY
+* EVENTBRITE_USER_KEY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+They can be acquired by registering for an Eventbrite account.  Set them manually or through dotenv by
+creating a .env file at the root of the project.
