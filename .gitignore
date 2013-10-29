@@ -17,3 +17,6 @@
 
 # Ignore IDE settings
 /.idea
+
+# Ignore the environment file
+/.env
