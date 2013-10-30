@@ -6,7 +6,7 @@
     <p class="lead">Our Next Event</p>
     <h1><%= @current_event.title %></h1>
     <h4><%= @current_event.start_date %></h4>
-    <button class="btn btn-large btn-primary">TODO: Eventbrite Registration Button</button>
+    <!--<button class="btn btn-large btn-primary">TODO: Eventbrite Registration Button</button>-->
   </div>
 </div>
 
@@ -17,20 +17,17 @@
       <h2>About Us</h2>
       <hr />
     </header>
-    <p class="multi-column">
-      One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
-      He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.
-      The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
-      "What's happened to me? " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
-      A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.
-      It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather.
-      Drops of rain could be heard hitting the pane, which made him feel quite sad.
-      "How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position.
-    </p>
+    <div class="multi-column">
+      <p>The Saint John Developer User Group is a community of developers, designers, and managers interested in enhancing the professional
+      and technical culture of the I.T. sector in the Saint John region.  We typically organize a meet up on the last Thursday of every
+      month at the Big Tide Brewing Company to have a drink, socialize, and hear about community events or take in a presentation.</p>
+      <p>If you are interesting in presenting a topic, making announcements, or becoming a sponsors, then please contact us. Our goal is
+      to gather the best and brightest members of the community in order to learn from each other.</p>
+    </div>
     <p class="centered">
-      <a href="#" class="btn btn-large btn-success">Follow us on Twitter</a>
-      <a href="#" class="btn btn-large btn-success">Join us on Facebook</a>
-      <a href="#" class="btn btn-large btn-success">Subscribe to our Mailing List</a>
+      <a href="https://twitter.com/SJDevUG" class="btn btn-large btn-success">Follow us on Twitter</a>
+      <a href="https://www.facebook.com/groups/sjdevug" class="btn btn-large btn-success">Join us on Facebook</a>
+      <!--<a href="#" class="btn btn-large btn-success">Subscribe to our Mailing List</a>-->
     </p>
   </section>
 </div>
@@ -44,16 +41,16 @@
     </header>
     <div class="row">
       <div class="col-md-4 event">
-        <div><%= @next_event.title %></div>
-        <div><%= @next_event.start_date %></div>
+        <h4>Building Better Web Applications with AngularJS</h4>
+        <p class="date">October 30, 2013</p>
+        <p class="description">As increasingly sophisticated functionality is pushed into the client-side, Javascript applications are becoming more complex and demand codebases that are scalable, reliable, and reusable.  This talk will discuss the features and concepts in Angular.js that help make this achievable, how the framework can be used for both small and large-scale application development, and how testing fits into the process.</p>
+        <p class="presenter">Presented by Colin Casey</p>
       </div>
       <div class="col-md-4 event">
-        <div><%= @current_event.title %></div>
-        <div><%= @current_event.start_date %></div>
+        <h4>No Speaker Announced</h4>
       </div>
       <div class="col-md-4 event">
-        <div><%= @previous_event.title %></div>
-        <div><%= @previous_event.start_date %></div>
+        <h4>No Speaker Announced</h4>
       </div>
     </div>
   </section>
@@ -67,7 +64,45 @@
       <hr />
     </header>
     <p>
-      TODO: Images for all our sponsors...
+      <img src="/assets/sponsors/t4g.jpg"/>
+      <img src="/assets/sponsors/enterprisesj.jpg"/>
+      <img src="/assets/sponsors/rapidmind.gif"/>
+      <img src="/assets/sponsors/swiftradius.png"/>
+      <img src="/assets/sponsors/ambir.png"/>
     </p>
+    <!--<div class="row">-->
+      <!--<div class="col-md-3">-->
+        <!--<a href="http://www.t4g.com" class="sponsor">-->
+          <!--<span>T4G</span>-->
+          <!--<div class="logo t4g"></div>-->
+        <!--</a>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<a href="http://www.enterprisesj.com/" class="sponsor">-->
+          <!--<span>Enterprise Saint John</span>-->
+          <!--<div class="logo enterprise-sj"></div>-->
+        <!--</a>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<a href="http://www.rapidmindsolutions.com/" class="sponsor">-->
+          <!--<span>Rapidmind Solutions</span>-->
+          <!--<div class="logo rapidmind"></div>-->
+        <!--</a>-->
+      <!--</div>-->
+      <!--<div class="col-md-3">-->
+        <!--<a href="http://www.swiftradius.com/" class="sponsor">-->
+          <!--<span>Swiftradius</span>-->
+          <!--<div class="logo swiftradius"></div>-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+      <!--<div class="col-md-3">-->
+        <!--<a href="http://www.ambirsolutions.com/" class="sponsor">-->
+          <!--<span>Ambir</span>-->
+          <!--<div class="logo ambir"></div>-->
+        <!--</a>-->
+      <!--</div>-->
+    <!--</div>-->
   </section>
 </div>

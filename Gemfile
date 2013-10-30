@@ -9,8 +9,21 @@ gem 'jbuilder', '~> 1.2'
 gem 'angularjs-rails'
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'unicorn'
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'excon'
+gem 'rash'
 gem 'eventbrite-client', '0.1.4'
 
 group :development do
   gem 'dotenv-rails', '0.9.0'
+end
+
+group :test do
+  gem 'webmock'
+  gem 'vcr'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
 end
