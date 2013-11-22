@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
   def active_nav?(key)
     key == controller_name
   end
+
+  def sjdug_organizer
+    @sjdug_organizer ||= Eventbrite::Organizer.new(ENV['SJDUG_ORG_ID'])
+  end
 end

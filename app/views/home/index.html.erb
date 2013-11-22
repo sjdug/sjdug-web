@@ -1,12 +1,19 @@
 <div class="jumbotron">
-  <h1>We're a community of <br/>I.T. Professionals</h1>
+  <h1 class="community">
+    We're a community of
+    <span class="break hidden-xs"></span>
+    I.T. Professionals
+  </h1>
 
   <div class="container">
     <a id="next-event"></a>
     <p class="lead">Our Next Event</p>
     <h1><%= @current_event.title %></h1>
-    <h4><%= @current_event.start_date %></h4>
-    <!--<button class="btn btn-large btn-primary">TODO: Eventbrite Registration Button</button>-->
+    <h4><%= friendly_date(@current_event) %></h4>
+    <a href="<%= @current_event.url %>" class="btn btn-large btn-danger">
+      <i class="fa fa-ticket"></i>
+      &nbsp; RSVP to this Event
+    </a>
   </div>
 </div>
 
@@ -24,11 +31,32 @@
       <p>If you are interesting in presenting a topic, making announcements, or becoming a sponsors, then please contact us. Our goal is
       to gather the best and brightest members of the community in order to learn from each other.</p>
     </div>
-    <p class="centered">
-      <a href="https://twitter.com/SJDevUG" class="btn btn-large btn-success">Follow us on Twitter</a>
-      <a href="https://www.facebook.com/groups/sjdevug" class="btn btn-large btn-success">Join us on Facebook</a>
-      <!--<a href="#" class="btn btn-large btn-success">Subscribe to our Mailing List</a>-->
-    </p>
+    <div class="row">
+      <div class="col-md-4">
+        <p class="centered">
+          <a href="https://twitter.com/SJDevUG" class="btn btn-large btn-twitter">
+            <i class="fa fa-twitter"></i>
+            &nbsp; Follow us on Twitter
+          </a>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <p class="centered">
+          <a href="https://www.facebook.com/groups/sjdevug" class="btn btn-large btn-facebook">
+            <i class="fa fa-facebook"></i>
+            &nbsp; Join us on Facebook
+          </a>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <p class="centered">
+          <a href="#" class="btn btn-large btn-success">
+            <i class="fa fa-envelope"></i>
+            &nbsp; Subscribe to our Mailing List
+          </a>
+        </p>
+      </div>
+    </div>
   </section>
 </div>
 
@@ -40,18 +68,14 @@
       <hr />
     </header>
     <div class="row">
-      <div class="col-md-4 event">
-        <h4>Building Better Web Applications with AngularJS</h4>
-        <p class="date">October 30, 2013</p>
-        <p class="description">As increasingly sophisticated functionality is pushed into the client-side, Javascript applications are becoming more complex and demand codebases that are scalable, reliable, and reusable.  This talk will discuss the features and concepts in Angular.js that help make this achievable, how the framework can be used for both small and large-scale application development, and how testing fits into the process.</p>
-        <p class="presenter">Presented by Colin Casey</p>
-      </div>
-      <div class="col-md-4 event">
-        <h4>No Speaker Announced</h4>
-      </div>
-      <div class="col-md-4 event">
-        <h4>No Speaker Announced</h4>
-      </div>
+      <% @events.each do |event| %>
+        <div class="col-md-<%= column_size %> event">
+          <h4><%= event.title %></h4>
+          <p class="date"><%= friendly_date(event) %></p>
+          <p class="description"><%= event.description %></p>
+          <p class="presenter"><%= event.presented_by %></p>
+        </div>
+      <% end %>
     </div>
   </section>
 </div>
@@ -70,39 +94,5 @@
       <img src="/assets/sponsors/swiftradius.png"/>
       <img src="/assets/sponsors/ambir.png"/>
     </p>
-    <!--<div class="row">-->
-      <!--<div class="col-md-3">-->
-        <!--<a href="http://www.t4g.com" class="sponsor">-->
-          <!--<span>T4G</span>-->
-          <!--<div class="logo t4g"></div>-->
-        <!--</a>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<a href="http://www.enterprisesj.com/" class="sponsor">-->
-          <!--<span>Enterprise Saint John</span>-->
-          <!--<div class="logo enterprise-sj"></div>-->
-        <!--</a>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<a href="http://www.rapidmindsolutions.com/" class="sponsor">-->
-          <!--<span>Rapidmind Solutions</span>-->
-          <!--<div class="logo rapidmind"></div>-->
-        <!--</a>-->
-      <!--</div>-->
-      <!--<div class="col-md-3">-->
-        <!--<a href="http://www.swiftradius.com/" class="sponsor">-->
-          <!--<span>Swiftradius</span>-->
-          <!--<div class="logo swiftradius"></div>-->
-        <!--</a>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-      <!--<div class="col-md-3">-->
-        <!--<a href="http://www.ambirsolutions.com/" class="sponsor">-->
-          <!--<span>Ambir</span>-->
-          <!--<div class="logo ambir"></div>-->
-        <!--</a>-->
-      <!--</div>-->
-    <!--</div>-->
   </section>
 </div>

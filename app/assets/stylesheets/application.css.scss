@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -112,19 +113,11 @@ section header {
 section {
   margin-bottom: 50px;
 
-  .multi-column {
-    -moz-column-count: 3;
-    -moz-column-gap: 20px;
-    -webkit-column-count: 3;
-    -webkit-column-gap: 20px;
-    text-align: justify;
-  }
-
   .centered {
     text-align: center;
     margin-top: 20px;
     a {
-      margin: 0 10px;
+      width: 100%;
     }
   }
 }
@@ -288,5 +281,57 @@ a.sponsor {
 
   p {
     text-align: center;
+  }
+}
+
+.btn-twitter {
+  background-color: #1AB2E8;
+  border-color: darken(#1AB2E8, 10%);
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    background-color: darken(#1AB2E8, 10%);
+    border-color: darken(#1AB2E8, 20%);
+  }
+}
+
+.btn-facebook {
+  border-color: darken(#4C68A1, 10%);
+  background-color: #4C68A1;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    background-color: darken(#4C68A1, 10%);
+    border-color: darken(#4C68A1, 20%);
+  }
+}
+
+span.break {
+  display: block;
+}
+
+@media (max-width: $screen-xs-max) {
+  .multi-column {
+    -moz-column-count: 1;
+    -moz-column-gap: 0;
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0;
+    text-align: justify;
+  }
+
+  .jumbotron h1.community {
+    font-size: 33px;
+  }
+}
+
+@media (min-width: $screen-xs-max) {
+  .multi-column {
+    -moz-column-count: 3;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20px;
+    text-align: justify;
   }
 }
