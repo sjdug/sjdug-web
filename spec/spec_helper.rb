@@ -3,7 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
-require 'vcr'
+#require 'vcr'
 require 'webmock/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -43,8 +43,86 @@ RSpec.configure do |config|
   config.order = "random"
 end
 
-#VCR config
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/fixtures/cassettes'
-  c.stub_with :webmock
+class Randgen
+  def self.organizer
+    id = /\d{7}/.gen
+    {
+      url: "http://www.eventbrite.com/org/#{id}",
+      description: /[:sentence:]/.gen,
+      long_description: /[:sentence:]/.gen,
+      name: /\w{5,15}/.gen
+    }
+  end
+
+  def self.event
+    id = /\d{7}/.gen
+    title = /\w{3,7} \w{7} \w{5,15}/.gen
+    {
+        id: id,
+        title: title,
+        start_date: /[:datetime:]/.gen,
+        end_date: /[:datetime:]/.gen,
+        box_header_text_color: /[:hex_color:]/.gen,
+        locale: 'en_CA',
+        link_color: /[:hex_color:]/.gen,
+        box_background_color: /[:hex_color:]/.gen,
+        box_border_color: /[:hex_color:]/.gen,
+        timezone: 'North America/Halifax',
+        organizer: /[:organizer:]/.gen,
+        background_color: /[:hex_color:]/.gen,
+        category: 'meetings,social',
+        box_header_background_color: /[:hex_color:]/.gen,
+        capacity: /\d{1,2}/.gen,
+        num_attendee_rows: nil,
+        status: 'Completed',
+        description: /[:sentence:]/.gen,
+        tags: '',
+        timezone_offset: 'GMT+0000',
+        text_color: /[:hex_color:]/.gen,
+        title_text_color: "",
+        tickets: [{
+          ticket: {
+            id: /\d{7}/.gen,
+            description: '',
+            end_date: /[:datetime:]/.gen,
+            min: 1,
+            max: nil,
+            price: '0.00',
+            visible: 'true',
+            currency: 'CDN',
+            display_price: '0.00',
+            type: 0,
+            name: 'General'
+          }
+        }],
+        created: /[:datetime:]/.gen,
+        url: "https://www.eventbrite.ca/e/#{title.dasherize}-#{id}",
+        box_text_color: /[:hex_color:]/.gen,
+        privacy: "Public",
+        venue: {
+            id: /\d{7}/,
+            city: 'Fake Town',
+            name: 'The Meeting Place',
+            country: 'Canada',
+            region: 'NB',
+            longitude: -67,
+            postal_code: 'A1C',
+            address_2: '',
+            address: '123 Fake Street',
+            latitude: 45,
+            country_code: 'CA'
+        },
+        modified: /[:datetime:]/.gen,
+        repeats: 'no'
+    }
+  end
+
+  def self.hex_color
+    codes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+    6.times.map { codes[rand(0...codes.length)] }.join
+  end
+
+  def self.datetime
+    /\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/.gen
+  end
 end
