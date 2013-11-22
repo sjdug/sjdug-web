@@ -8,6 +8,10 @@ body {
   & > header, & > nav {
     background-color: #fff;
   }
+
+  &.modal-open {
+    margin-right: 0;
+  }
 }
 
 header {
@@ -116,6 +120,8 @@ section {
   .centered {
     text-align: center;
     margin-top: 20px;
+
+    button,
     a {
       width: 100%;
     }

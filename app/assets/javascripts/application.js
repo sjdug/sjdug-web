@@ -1,15 +1,47 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require bootstrap/transition
+//= require bootstrap/modal
+//= require angular
+
+(function() {
+  var app = angular.module('sjdug', []);
+
+  app.controller('mailingList', [
+      '$scope', '$http', '$timeout',
+      function(scope, $http, $timeout) {
+        var NEW_STATE = 'new',
+            SUBSCRIBED_STATE = 'subscribed',
+            ERROR_STATE = 'error';
+
+        var state = NEW_STATE;
+
+        scope.subscribe = function() {
+          $http.post('/subscribe', {
+            email: scope.mailingListForm.email
+          }).success(function() {
+            state = SUBSCRIBED_STATE;
+          }).error(function() {
+            state = ERROR_STATE;
+          });
+        };
+
+        scope.isNew = function() {
+          return state === NEW_STATE;
+        };
+
+        scope.hasSubscribed = function() {
+          return state === SUBSCRIBED_STATE;
+        };
+
+        scope.hasError = function() {
+          return state === ERROR_STATE;
+        };
+
+        scope.reset = function() {
+          $timeout(function() {
+            state = NEW_STATE;
+          }, 250);
+        }
+      }
+  ]);
+})();

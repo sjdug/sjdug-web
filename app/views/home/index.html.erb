@@ -50,10 +50,10 @@
       </div>
       <div class="col-md-4">
         <p class="centered">
-          <a href="#" class="btn btn-large btn-success">
+          <button class="btn btn-large btn-success" data-toggle="modal" data-target="#subscribe">
             <i class="fa fa-envelope"></i>
             &nbsp; Subscribe to our Mailing List
-          </a>
+          </button>
         </p>
       </div>
     </div>
@@ -95,4 +95,38 @@
       <img src="/assets/sponsors/ambir.png"/>
     </p>
   </section>
+</div>
+
+<div id="subscribe" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="subscribeTitle" aria-hidden="true" ng-controller="mailingList">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="subscribeTitle">SJ Developer User Group Mailing List</h4>
+      </div>
+      <div class="modal-body">
+        <div ng-show="isNew()">
+          <h5>Get notified when new events are announced!</h5>
+          <p>Easy to unsubscribe - No spam - We do not share your details with anyone.  Just enter your email below
+          and click "Subscribe".</p>
+          <form name="mailingListForm" role="form">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Enter email" ng-model="mailingListForm.email" required>
+            </div>
+          </form>
+        </div>
+        <div ng-show="hasSubscribed()">
+          <h5>Thank you for subscribing! Expect to hear from us soon.</h5>
+        </div>
+        <div ng-show="hasError()">
+          <h5>An error occurred!</h5>
+          <p>Sorry, you'll have to <a href="javascript:void(0)" ng-click="reset()">try subscribing again</a> later.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" ng-disabled="mailingListForm.$invalid" ng-click="subscribe()" ng-show="isNew()">Subscribe</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="reset()">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
