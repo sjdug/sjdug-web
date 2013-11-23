@@ -10,15 +10,16 @@ module Eventbrite
     end
 
     def events
-      response = connection.get do |req|
-        req.url "/json/organizer_list_events"
-        req.params['id'] = @id
-        req.params['app_key'] = @options[:app_key] || @@app_key
+      begin
+        response = connection.get do |req|
+          req.url "/json/organizer_list_events"
+          req.params['id'] = @id
+          req.params['app_key'] = @options[:app_key] || @@app_key
+        end
+        response.body.events.map { |record| Event.from_hash(record.event) }
+      rescue
+        []
       end
-
-      # TODO: error handling
-
-      response.body.events.map { |record| Event.from_hash(record.event) }
     end
 
     def upcoming_events(opts = {})

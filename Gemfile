@@ -13,7 +13,7 @@ gem 'unicorn'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'rash'
-gem 'feralchimp'
+gem 'mailchimp-api', '2.0.4', require: 'mailchimp'
 
 group :development do
   gem 'dotenv-rails', '0.9.0'
