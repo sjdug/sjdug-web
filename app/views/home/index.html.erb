@@ -10,6 +10,7 @@
     <p class="lead">Our Next Event</p>
     <h1><%= @current_event.title %></h1>
     <h4><%= friendly_date(@current_event) %></h4>
+    <p class="description"><%= raw @current_event.description %></p>
     <a href="<%= @current_event.url %>" class="btn btn-large btn-danger">
       <i class="fa fa-ticket"></i>
       &nbsp; RSVP to this Event
@@ -72,7 +73,7 @@
         <div class="col-md-<%= column_size %> event">
           <h4><%= event.title %></h4>
           <p class="date"><%= friendly_date(event) %></p>
-          <p class="description"><%= event.description %></p>
+          <p class="description"><%= raw event.description %></p>
           <p class="presenter"><%= event.presented_by %></p>
         </div>
       <% end %>
