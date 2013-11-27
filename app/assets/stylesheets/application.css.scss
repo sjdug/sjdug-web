@@ -141,6 +141,17 @@ section {
   }
 }
 
+.event-description {
+  * {
+    line-height: 16px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+}
+
+.upcoming-events .event-description {
+  text-align: justify;
+}
+
 .jumbotron {
   background: #8A8F95 no-repeat 0 0 url('/assets/shipyard.jpg');
   background-size: cover;
