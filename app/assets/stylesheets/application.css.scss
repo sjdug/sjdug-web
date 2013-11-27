@@ -142,14 +142,20 @@ section {
 }
 
 .event-description {
-  * {
-    line-height: 16px;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  p, span {
+    color: #00234D; !important;
+    font-size: 14px !important;
+    line-height: 16px !important;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   }
 }
 
 .upcoming-events .event-description {
   text-align: justify;
+
+  p, span {
+    color: #333 !important;
+  }
 }
 
 .jumbotron {
